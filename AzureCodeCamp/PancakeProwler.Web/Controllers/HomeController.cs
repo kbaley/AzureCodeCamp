@@ -12,7 +12,7 @@ namespace PancakeProwler.Web.Controllers
 
         public ActionResult Index()
         {
-            var meals = MealRepository.List().Where(x => x.Date >= DateTime.Today && x.Date < DateTime.Today.AddDays(1));
+            var meals = MealRepository.List().Where(x => x.Date >= DateTime.Today);
             return View(meals);
         }
 

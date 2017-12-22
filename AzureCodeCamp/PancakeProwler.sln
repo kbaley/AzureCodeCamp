@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4DD65DAB-F3EF-4D1F-929E-CC1CE188B943}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeProwler.Data.Table",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeProwler.Data.Common", "PancakeProwler.Data.Common\PancakeProwler.Data.Common.csproj", "{69B6AAD3-9F25-4AF4-BC11-F35042A6C648}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "PancakeProwler.Azure", "PancakeProwler.Azure\PancakeProwler.Azure.ccproj", "{9A9277EC-B96D-44E6-A5B5-E49D2D38CDD8}"
+Project("{72F1FD5F-E859-32D1-A786-58E2842749F4}") = "PancakeProwler.Azure", "PancakeProwler.Azure\PancakeProwler.Azure.ccproj", "{9A9277EC-B96D-44E6-A5B5-E49D2D38CDD8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeProwler.Data.Queue", "PancakeProwler.Data.Queue\PancakeProwler.Data.Queue.csproj", "{A4545760-A2E6-4489-80BA-4093CB6AA14F}"
 EndProject
@@ -35,6 +35,24 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeProwler.Search", "PancakeProwler.Search\PancakeProwler.Search.csproj", "{CCED90FF-D342-4C19-BAB7-D8A2F961DDEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeProwler.Data.Postgres", "PancakeProwler.Data.Postgres\PancakeProwler.Data.Postgres.csproj", "{8309F60B-5CF1-44F9-86E0-31B3D6634CE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C46AE649-5C88-4B04-9F03-F2289935046D}"
+	ProjectSection(SolutionItems) = preProject
+		PancakeProwler.Web.50\global.json = PancakeProwler.Web.50\global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{0B928DCF-EA98-4641-BA9C-CDD8DD3B2FB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8F688967-C380-43AD-A05A-FB70CFE367BB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-DockerAzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-DockerAzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F8DD9726-56B7-4EAC-884D-DBE71C295C2D}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\PancakeProwler.Web.50DockerVM.json = PublishScripts\Templates\PancakeProwler.Web.50DockerVM.json
+		PublishScripts\Templates\PancakeProwler.Web.50DockerVM.param.dev.json = PublishScripts\Templates\PancakeProwler.Web.50DockerVM.param.dev.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +115,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F688967-C380-43AD-A05A-FB70CFE367BB} = {0B928DCF-EA98-4641-BA9C-CDD8DD3B2FB2}
+		{F8DD9726-56B7-4EAC-884D-DBE71C295C2D} = {0B928DCF-EA98-4641-BA9C-CDD8DD3B2FB2}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = d611153b-021a-427b-b0a7-8223801c0aec

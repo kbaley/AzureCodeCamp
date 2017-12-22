@@ -14,9 +14,9 @@ namespace PancakeProwler.Web
             builder.RegisterAssemblyTypes(typeof(MvcApplication).Assembly).AsImplementedInterfaces();
 
 //            Uncomment for InMemory Storage
-            builder.RegisterAssemblyTypes(typeof(Data.InMemory.Repositories.RecipeRepository).Assembly)
-                   .AsImplementedInterfaces()
-                   .SingleInstance();
+//            builder.RegisterAssemblyTypes(typeof(Data.InMemory.Repositories.RecipeRepository).Assembly)
+//                   .AsImplementedInterfaces()
+//                   .SingleInstance();
 
             //Uncomment for SQL storage
 //            builder.RegisterType<DataContext>().AsSelf().InstancePerRequest();
@@ -32,7 +32,7 @@ namespace PancakeProwler.Web
             //builder.RegisterAssemblyTypes(typeof(PancakeProwler.Data.Queue.Repositories.BookCreationRequestRepository).Assembly).AsImplementedInterfaces().PropertiesAutowired();
 
             //Uncomment for PostgreSQL storage
-//            builder.RegisterAssemblyTypes(typeof(PancakeProwler.Data.Postgres.IPostgresRepository).Assembly).AsImplementedInterfaces().InstancePerRequest().PropertiesAutowired();
+            builder.RegisterAssemblyTypes(typeof(PancakeProwler.Data.Postgres.IPostgresRepository).Assembly).AsImplementedInterfaces().InstancePerRequest().PropertiesAutowired();
 
             builder.RegisterAssemblyTypes(typeof(PancakeProwler.Data.ServiceBus.Repositories.BookCreationRequestRepository).Assembly).AsImplementedInterfaces().PropertiesAutowired();
 

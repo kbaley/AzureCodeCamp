@@ -49,6 +49,30 @@ VALUES (@Id, @Name, @SponsorName, @SponsorWebSite, @SponsorEmail, @SponsorTwitte
 
         public void Edit(Meal meal)
         {
+            var sql =
+                @"UPDATE meals SET name = @Name, sponsor_name = @SponsorName, sponsor_website = @SponsorWebSite, sponsor_email = @SponsorEMail, sponsor_twitter = @SponsorTwitter, contact_name = @ContactName, contact_email = @ContactEmail, contact_phone_number = @ContactPhoneNumber, address = @Address, latitude = @Latitude, longitude = @Longitude, date = @Date, description = @Description, image_location = @ImageLocation
+WHERE id = @Id"; 
+            using ( var conn = new NpgsqlConnection( ConnectionString ) ) {
+                conn.Open( );
+                conn.Execute(sql, new
+                                  {
+                                      meal.Id,
+                                      meal.Name,
+                                      meal.SponsorName,
+                                      meal.SponsorWebSite,
+                                      meal.SponsorEMail,
+                                      meal.SponsorTwitter,
+                                      meal.ContactName,
+                                      meal.ContactEMail,
+                                      meal.ContactPhoneNumber,
+                                      meal.Address,
+                                      meal.Latitude,
+                                      meal.Longitude,
+                                      meal.Date,
+                                      meal.Description,
+                                      meal.ImageLocation
+                                  });
+            }
         }
 
         public Meal GetById(Guid id)
@@ -65,8 +89,8 @@ VALUES (@Id, @Name, @SponsorName, @SponsorWebSite, @SponsorEmail, @SponsorTwitte
 
         public void InitPostgresStorage()
         {
-            var sql = @"DROP TABLE IF EXISTS meals;
-CREATE TABLE meals
+            var sql = @"
+CREATE TABLE IF NOT EXISTS meals
 (
   ""id"" uuid NOT NULL DEFAULT '00000000-0000-0000-0000-000000000000'::uuid,
   ""name"" text NOT NULL DEFAULT ''::text,
